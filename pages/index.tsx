@@ -157,27 +157,27 @@ function AboutPatrick(props: any) {
           alignItems="center"
         >
           <Grid item xs={12} sm={6}>
-            <Container>
-              <img
-                src="/headshot.jpg"
-                alt="Patrick Profile"
-                className={props.classes.aboutHeadshot}
-              />
-            </Container>
-          </Grid>
-          <Grid item xs={12} sm={6}>
             <Typography
               variant="h5"
               align="center"
               color="textSecondary"
               paragraph
             >
-              Patrick is a Architect, Manager, Developer, and Entrepreneur.
+              Patrick is a Software Architect, Manager, Developer, and Entrepreneur.
               <p />
-              He has been the first employee at startups and been responsible dozens of individuals and teams in public companies.
+              He has been the first employee at startups and responsible for dozens of individuals and teams in public companies.
               <p />
               These experiences lead him to recognize the commonality in realizing an idea and the strong interactions between companies' organizational and technical aspects.
             </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Box>
+              <img
+                src="/headshot.jpg"
+                alt="Patrick Profile"
+                className={props.classes.aboutHeadshot}
+              />
+            </Box>
           </Grid>
         </Grid>
       </Container>
@@ -214,17 +214,24 @@ function ServicesDetails(props: any) {
   return (
     <Box className={props.classes.aboutBox}>
       <Container>
-        <Grid
-          container
-          className={props.classes.servicesContainer}
-          spacing={2}
-          alignItems="center"
-        >
+        <Grid container 
+          spacing={2} 
+          alignItems="center">
           <Grid item xs={12} sm={6}>
-            <ServiceDetail classes={props.classes} title="Individuals" description="One on One coaching for engineering managers, tech leads, software architects, and those in technical leadership positions." />
+            <Box>
+              <img
+                src="/one-on-one.jpg"
+                className={props.classes.aboutHeadshot}
+              />
+            </Box>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <ServiceDetail classes={props.classes} title="Groups" description="Group training for systems thinking, strategic alignment, and review of organizational and technical architecture." />
+            <Typography variant="h4"
+              align="center"
+              color="textSecondary"
+              paragraph>
+              One on One coaching for Engineering Managers and Directors.
+            </Typography>
           </Grid>
         </Grid>
       </Container>
@@ -277,18 +284,11 @@ export default function HomePage() {
         <CssBaseline />
         <main>
           <Hero classes={classes} />
-
-          <AboutPatrick classes={classes} />
-
           <ServicesDetails classes={classes} />
-
+          <AboutPatrick classes={classes} />
           <ContactInfo classes={classes} />
-
         </main>
-
-        {/* Footer */}
         <MainFooter classes={classes} />
-        {/* End footer */}
       </React.StrictMode>
     </React.Fragment>
   )
