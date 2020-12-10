@@ -12,7 +12,7 @@ import Image from 'next/image'
 const useStyles = makeStyles(theme => ({
   heroBox: {
     display: "grid",
-    height: "100%",
+    maxHeight: "100vh",
   },
   heroContainer: {
     paddingLeft: "16px",
