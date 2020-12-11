@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
 import { Box, Paper, Divider } from "@material-ui/core"
+import Image from 'next/image'
 
 const useStyles = makeStyles(theme => ({
   heroBox: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: "url('/splash-image.jpg')",
     position: "relative",
     height: "800px",
+    maxHeight: "100vh",
     width: "auto",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -172,10 +174,12 @@ function AboutPatrick(props: any) {
           </Grid>
           <Grid item xs={12} sm={6}>
             <Box>
-              <img
+              <Image
                 src="/headshot.jpg"
                 alt="Patrick Profile"
                 className={props.classes.aboutHeadshot}
+                width={500}
+                height={500}
               />
             </Box>
           </Grid>
@@ -221,7 +225,10 @@ function ServicesDetails(props: any) {
             <Box>
               <img
                 src="/one-on-one.jpg"
+                alt="Two people in a one on one"
                 className={props.classes.aboutHeadshot}
+                width={500}
+                height={500}
               />
             </Box>
           </Grid>
