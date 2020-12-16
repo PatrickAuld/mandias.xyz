@@ -103,15 +103,13 @@ function Copyright() {
 function ContactDetail(props: { linkHref: string, title: string, link: string }) {
   return (
     <Box minWidth="220px" minHeight="80px">
-      <Paper elevation={1}>
         <Typography variant="h5" align="center" color="textPrimary">
           {props.title}
         </Typography>
         <Divider variant="middle" />
         <Typography align="center" color="textSecondary">
           <Link href={props.linkHref}>{props.link}</Link>
-        </Typography>
-      </Paper>
+      </Typography>
     </Box>
   )
 }
@@ -220,7 +218,9 @@ function ServicesDetails(props: any) {
       <Container>
         <Grid container 
           spacing={2} 
-          alignItems="center">
+          alignItems="center"
+          wrap="wrap-reverse"
+        >
           <Grid item xs={12} sm={6}>
             <Box>
               <img
@@ -251,11 +251,10 @@ function ContactInfo(props: any) {
   return (
     <Box className={props.classes.contactBox}>
       <Container>
-        <Typography variant="h4" align="center">
-          Contact
-          </Typography>
-        <p />
-        <Grid container spacing={2} justify="center">
+        <Grid container
+          spacing={2}
+          justify="center"
+        >
           <Grid item>
             <ContactDetail
               title="Email"
