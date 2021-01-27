@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
   heroText: {
     position: "absolute",
-    bottom: "15%",
+    bottom: "5%",
     paddingLeft: "5%",
     color: theme.palette.background.paper,
   },
@@ -49,19 +49,10 @@ const useStyles = makeStyles(theme => ({
     borderRadius: "50%",
     width: "100%",
     maxWidth: "500px",
-    height: "auto",
-    alignContent: "center",
+    height: "auto"
   },
   contactBox: {
     backgroundColor: theme.palette.background.default,
-  },
-  servicesContainer: {
-    backgroundColor: theme.palette.background.paper,
-    height: "auto"
-  },
-  serviceCard: {
-    verticalAlign: "top",
-    height: "100%"
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -130,8 +121,9 @@ function Hero(props: any) {
               Mandias
               </Typography>
           </Link>
+          <Box className={props.classes.heroText}>
           <Typography
-            className={props.classes.heroText}
+
             component="h2"
             variant="h2"
             align="left"
@@ -139,6 +131,16 @@ function Hero(props: any) {
           >
             Leaders work in Systems
             </Typography>
+            <Typography
+
+              component="h4"
+              variant="h4"
+              align="left"
+              gutterBottom
+            >
+              Coaching and Mentoring for Engineering Leaders
+            </Typography>
+          </Box>
         </Box>
       </Container>
     </Box>
@@ -211,41 +213,6 @@ function ServiceDetail(props: { title: string, description: string, classes: { s
   )
 }
 
-{/* Site and offering description */ }
-function ServicesDetails(props: any) {
-  return (
-    <Box className={props.classes.aboutBox}>
-      <Container>
-        <Grid container 
-          spacing={2} 
-          alignItems="center"
-          wrap="wrap-reverse"
-        >
-          <Grid item xs={12} sm={6}>
-            <Box>
-              <img
-                src="/one-on-one.jpg"
-                alt="Two people in a one on one"
-                className={props.classes.aboutHeadshot}
-                width={500}
-                height={500}
-              />
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Typography variant="h4"
-              align="center"
-              color="textSecondary"
-              paragraph>
-              One on One coaching for Engineering Managers and Directors.
-            </Typography>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
-  )
-}
-
 {/* Contact info 3 box */ }
 function ContactInfo(props: any) {
   return (
@@ -290,7 +257,6 @@ export default function HomePage() {
         <CssBaseline />
         <main>
           <Hero classes={classes} />
-          <ServicesDetails classes={classes} />
           <AboutPatrick classes={classes} />
           <ContactInfo classes={classes} />
         </main>
