@@ -8,6 +8,7 @@ import Container from "@material-ui/core/Container"
 import Link from "@material-ui/core/Link"
 import { Box, Paper, Divider } from "@material-ui/core"
 import Image from 'next/image'
+import Head from 'next/head'
 
 const useStyles = makeStyles(theme => ({
   heroBox: {
@@ -159,6 +160,17 @@ function AboutPatrick(props: any) {
           alignItems="center"
         >
           <Grid item xs={12} sm={6}>
+            <Box>
+              <Image
+                src="/headshot.jpg"
+                alt="Patrick Profile"
+                className={props.classes.aboutHeadshot}
+                width={500}
+                height={500}
+              />
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={6}>
             <Typography
               variant="h5"
               align="center"
@@ -171,17 +183,6 @@ function AboutPatrick(props: any) {
               <p />
               These experiences lead him to recognize the commonality in realizing an idea and the strong interactions between companies' organizational and technical aspects.
             </Typography>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Box>
-              <Image
-                src="/headshot.jpg"
-                alt="Patrick Profile"
-                className={props.classes.aboutHeadshot}
-                width={500}
-                height={500}
-              />
-            </Box>
           </Grid>
         </Grid>
       </Container>
@@ -255,6 +256,10 @@ export default function HomePage() {
     <React.Fragment>
       <React.StrictMode>
         <CssBaseline />
+        <Head>
+          <title>Mandias Consulting</title>
+          <meta name="Description" content="Mentoring and coaching for engineering leadership." />
+        </Head>
         <main>
           <Hero classes={classes} />
           <AboutPatrick classes={classes} />
